@@ -8,7 +8,7 @@ for branch in $(git for-each-ref --format='%(refname:strip=3)' refs/remotes/ | g
         git log -1 -s origin/"$branch" --date=relative
         echo
         if [ "$yesAll" = false ] ; then
-            read -p "Do you want to delete: $branch? (y/n/a) " answer 
+            read -p "Do you want to delete: $branch? ([y]es/[n]o/[a]ll) " answer 
         fi 
         if [ "$answer" = "y" ] || [ "$answer" = "a" ] || [ "$yesAll" = true ] ; then
             branches+=($branch)
